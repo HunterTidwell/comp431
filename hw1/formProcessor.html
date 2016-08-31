@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Order Form</title>
+	</head>
+	<body>
+		<h1>Pizza Bros Order Form</h2>
+		<form>
+			<p>Name: <input type="text" name="name"></p>
+			
+			<p>Address: <input type="text" name="address"></p>
+			
+			<p>Phone Number: <input type="tel" name="number"></p>
+			
+			<p>Pizza Size: <input type="radio" name="size" value="small">Small<br>
+			<input type="radio" name="size" value="medium">Medium<br>
+			<input type="radio" name="size" value="large">Large</p>
+			<p>Toppings: <input type="checkbox" name="toppings" value="pepperoni">Pepperoni<br>
+			<input type="checkbox" name="toppings" value="olives">Olives<br>
+			<input type="checkbox" name="toppings" value="pineapple">Pineapple</p>
+			<input type="submit" name="order" value="Place Order" onclick="return orderValidate">
+			<input type="button" name="clear" value="Clear" onclick="clearForm">
+		</form>
+	</body>
+	<script>
+		function clearForm() {
+		}
+		function orderValidate() {
+		}
+	</script>
+</html>
+
+
