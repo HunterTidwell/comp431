@@ -1,20 +1,73 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>The Game</title>
-	<meta charset="utf-8" />
-	<script src="avoid.js"></script>
-</head>
-<body> 
+	<head>
+		<title>Registration</title>
+		<meta name="author" content="Hunter Tidwell" />
+	</head>
+	<body onload="update_time(this.form.hidden_time)">
+		<h1>Ricebook New User Registration</h2>
+		<form id="form">
 
-	<input type="button" class="relative" value="Click Me" id="game_button" />
+			<input type="hidden" name="time" id="hidden_time" />
 
-</body>
-<style>
-	input.relative {
-		position: relative;
-		left: 100px;
-		top: 100px;
-	}
-</style>
+			<p>
+			User Name:
+			<input type="text" name="user_name" value="joebob" required />
+			</p>
+
+			<p>
+			Display Name:
+			<input type="text" name="display_name" value="csguy23" required />
+			</p>
+			
+			<p>
+			Email Address:
+			<input type="email" name="email" value="a@b" required />
+			</p>
+
+			<p>
+			Phone Number:
+			<input type="tel" name="phone" pattern="\d\d\d\-\d\d\d\d" value="123-4567" required />
+			</p>
+
+			<p>
+			Date of Birth:
+			<input type="date" name="birthdate" value="01/01/1900" required />
+			</p>
+
+			<p>
+			Zipcode:
+			<input type="text" name="zipcode" pattern="\d\d\d\d\d" value="12345" required />
+			</p>
+
+			<p>
+			Password:
+			<input type="password" name="password" required />
+			</p>
+
+			<p>
+			Password Confirm:
+			<input type="password" name="password2" required />
+			</p>
+
+
+			<input type="submit" onlick="return validate_form(this.parent)"/>
+			<input type="reset" />
+
+		</form>
+	</body>
+	<script>
+		function validate_form(form) {
+			if (form.password.value != form.password2.value) {
+				alert("Password confirmation must match password!");
+			}
+			return true;
+		}
+
+		function update_time(time_element) {
+			time_element.value = Date.now();
+		}
+	</script>
 </html>
+
+
