@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Profile</title>
+	<meta charset="utf-8" />
+	<meta name="author" content="Hunter Tidwell" />
+	<script src="profile.js"></script>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<div id="nav_bar">
+		<a href="main.html">Main page</a>
+	</div>
+	<h1>Your Profile</h2>
+	<form id="form">
+
+		<input type="hidden" name="time" id="hidden_time" />
+
+		<p>
+		User Name:
+		<input type="text" name="user_name" value="joebob" required />
+		</p>
+
+		<p>
+		Display Name:
+		<input type="text" name="display_name" value="csguy23" required />
+		</p>
+		
+		<p>
+		Email Address:
+		<input type="email" name="email" value="a@b" required />
+		</p>
+
+		<p>
+		Phone Number:
+		<input type="tel" name="phone" pattern="\d\d\d\-\d\d\d\d" value="123-4567" required />
+		</p>
+
+		<p>
+		Date of Birth:
+		<input type="date" name="birthdate" value="1900-07-05" required />
+		</p>
+
+		<p>
+		Zipcode:
+		<input type="text" name="zipcode" pattern="\d\d\d\d\d" value="12345" required />
+		</p>
+
+		<p>
+		Password:
+		<input type="password" name="password" required />
+		</p>
+
+		<p>
+		Password Confirm:
+		<input type="password" name="password2" required />
+		</p>
+
+		<input type="reset" />
+
+	</form>
+</body>
+</html>
+
+

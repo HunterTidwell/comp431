@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Index</title>
+	<meta charset="utf-8" />
+	<meta name="author" content="Hunter Tidwell" />
+	<script src="index.js"></script>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<div id="nav_bar">
+		Account Name:
+		<input type="text" id="login_name">
+		Password:
+		<input type="password" id="login_pwd">
+		<button type="button" id="login_btn">Login</button>
+	</div>
+
+		
+	<h1>Owlspot New User Registration</h2>
+	<form name="registration" id="registration_form">
+
+		<p>
+		User Name:
+		<input type="text" name="user_name" value="joe bob" required />
+		</p>
+
+		<p>
+		Display Name:
+		<input type="text" name="display_name" value="comicalnick" required />
+		</p>
+		
+		<p>
+		Email Address:
+		<input type="email" name="email" value="a@b" required />
+		</p>
+
+		<p>
+		Phone Number:
+		<input type="tel" name="phone" pattern="\d\d\d-\d\d\d\d" value="123-4567" required />
+		</p>
+
+		<p>
+		Date of Birth:
+		<input type="date" name="birthdate" value="1992-09-22" required />
+		</p>
+
+		<p>
+		Zipcode:
+		<input type="text" name="zipcode" pattern="\d\d\d\d\d" value="12345" required />
+		</p>
+
+		<p>
+		Password:
+		<input type="password" name="password" required />
+		</p>
+
+		<p>
+		Password Confirm:
+		<input type="password" name="password2" required />
+		</p>
+
+
+		<input type="submit" />
+		<input type="reset" />
+
+	</form>
+</body>
+</html>
+
+
