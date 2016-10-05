@@ -62,16 +62,18 @@ const toggle = (show) => {
 }
 
 const updateHeadline = (headline) => {
-  //const box = document.querySelector("#message");
+  const box = document.querySelector("#message");
   return resource('PUT', 'headline', { headline }).then((response) => {
-    	console.log(`New headline ${response.headline}`);
+	//for (var x in response) {
+	//	console.log(x, response[x]);
+	//}
+	
     	// Update the headline shown on the screen.  Be sure to not
     	// repeat yourself (DRY) => you will want to refactor some code.
-	const user = response.headlines[0];
 	//box.innerHTML = 'you are logged in as ${user.username} "${user.headline}"';
-	displayHeadline(user.username, user.headline);
+	displayHeadline(response.username, response.headline);
   })
-  .catch(r => box.innerHTML = '"${r.message}" when updating headline');
+  .catch(r => box.innerHTML = `"${r.message}" when updating headline`);
 }
 
 const displayHeadline = function(name, hl) {
