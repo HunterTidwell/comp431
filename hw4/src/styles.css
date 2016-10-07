@@ -2,6 +2,10 @@ body {
 	background-color: black;
 }
 
+span {
+	color: white;
+}
+
 #grid {
 	width: 656px;
 	height: 656px;

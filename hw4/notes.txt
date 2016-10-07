@@ -1,7 +1,0 @@
-So my starting idea is this:
-Make the tiles html elements,
-arrange them using css classes.
-use a fixed board size (5x5 tiles, 400x400px should work)
-hope the whole thing rescales onto mobile. don't worry, don't prioritize that for now.
-with this model the game should take ~5 hours to complete.
-I have 25 starting now at 1 am on thursday. Let's do this.

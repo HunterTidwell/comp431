@@ -4,11 +4,20 @@ HTMLCollection.prototype.forEach = Array.prototype.forEach;
 // width and height of #grid must be 100px * gridSize
 // because width and height of #grid > div is 100px
 const gridSize = 6;
-const straightSrc = "img/straight.png";
-const bentSrc = "img/bent.png";
 const backSrc = "img/question-mark.jpg";
 const deadSrc = "img/black.png";
+
+const horizontalSrc = "img/straight1.png";
+const verticalSrc = "img/straight2.png";
+
+const imgSrcs = [horizontalSrc, verticalSrc, "img/bent1.png", "img/bent2.png", "img/bent3.png", "img/bent4.png"];
+
 var swap;
+var start;
+var end;
+
+var flipCounter;  
+var flips = 0;
 
 const Deadcell = function() {
 	const cell = Cell(-1, -1);
@@ -20,10 +29,8 @@ const Deadcell = function() {
 
 const Cell = function(row, column) {
 	const myDiv = document.createElement("DIV");
-	var src = bentSrc;
-	if (Math.random() > 0.5) {
-		src = straightSrc;
-	}
+	var src = imgSrcs[randInt(0, imgSrcs.length)];
+	console.log(src);
 	var myTile = Tile(src);
 	myDiv.appendChild(myTile.myDiv);
 
@@ -46,6 +53,7 @@ const Cell = function(row, column) {
 			swap.setTile(temp);
 		} else {
 			myTile.flip();
+			addFlip();
 		}
 	}
 
@@ -86,7 +94,7 @@ const Tile = function(imgSrc, connectsTo) {
 }
 
 const randInt = function(minimum, maximum) {
-	return Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
+	return Math.floor(Math.random() * (maximum - minimum)) + minimum;
 }
 
 const getBorderCoords = function() {
@@ -102,23 +110,16 @@ const getBorderCoords = function() {
 	return val;
 }
 
-const setStart = function() {
-	startCoords = getBorderCoords();
-	endCoords = getBorderCoords();
-	while (startCoords == endCoords) {
-		endCoords = getBorderCoords();
-	}
-
-	if ((startCoords[0] == 0) || (startCords[0] == 1 + gridSize)) {
-		//todo set the tile for the start and end tiles
-	}
+const addFlip = function() {
+	flips ++;
+	flipCounter.innerHTML = "FLIPCOUNT: " + flips;
 }
 
 
 const begin = function() {
 	const grid = document.getElementById("grid");
 	swap = Deadcell();
-	swap.setTile(Tile("img/bent.png"));
+	swap.setTile(Tile(imgSrcs[0]));
 	swap.getTile().flip();
 	document.getElementById("swap").appendChild(swap.myDiv);
 	var newCell;
@@ -129,6 +130,12 @@ const begin = function() {
 	for (var i = 0; i < gridSize; i++) {
 		newCell = Deadcell();
 		grid.appendChild(newCell.myDiv);
+		// For now, hard code the start cell
+		if (i == 2) {
+			newCell.setTile(Tile(horizontalSrc));
+			newCell.getTile().flip();
+			start = newCell;
+		}
 		for (var j = 0; j < gridSize; j++) {
 			newCell = Cell(i, j);
 			grid.appendChild(newCell.myDiv);
@@ -139,7 +146,13 @@ const begin = function() {
 	for (var i = 0; i < gridSize + 2; i++) {
 		newCell = Deadcell();
 		grid.appendChild(newCell.myDiv);
+		if (i == 4) {
+			newCell.setTile(Tile(verticalSrc));
+			newCell.getTile().flip();
+			end = newCell;
+		}
 	}
+	flipCounter = document.getElementById("counter");
 
 	return;
 }
