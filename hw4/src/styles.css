@@ -1,0 +1,18 @@
+#grid {
+	width: 600px;
+	height: 600px;
+	/*border-style: solid;*/
+}
+
+#grid > div {
+	width: 100px;
+	height: 100px;
+	float: left;
+	/*border-style: solid;*/
+	outline: solid;
+}
+
+img {
+	width: 100px;
+	height: 100px;
+}
