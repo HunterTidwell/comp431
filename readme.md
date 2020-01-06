@@ -1,1 +1,1 @@
-Rice Comp431 Assignments.
+Rice Comp431 (Web Dev) Assignments.
