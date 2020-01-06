@@ -81,7 +81,7 @@
     "redux-thunk": "^2.1.0",
     "rimraf": "^2.5.4",
     "selenium-webdriver": "^2.53.2",
-    "serve": "^1.4.0",
+    "serve": "^11.3.0",
     "sinon": "^2.0.0-pre",
     "source-map-loader": "^0.1.5",
     "style-loader": "^0.13.1",
