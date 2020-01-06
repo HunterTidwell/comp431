@@ -30,7 +30,7 @@
     "babel-preset-stage-2": "^6.5.0",
     "bluebird": "^3.3.5",
     "chai": "^3.5.0",
-    "eslint": "^2.10.1",
+    "eslint": "^6.8.0",
     "eslint-plugin-babel": "^3.2.0",
     "eslint-plugin-react": "^5.1.1",
     "fetch-mock": "^4.5.4",
